@@ -24,7 +24,7 @@ for file_path in file_paths:
             }
     json_output.append(post)
 
-sorted(json_output, key=lambda post: post['timestamp'])
+json_output = sorted(json_output, key=lambda post: post['timestamp'], reverse=True)
 print json.dumps(json_output, None, indent=4)
 
 posts_json_file = open(POSTS_JSON_FILE_PATH, 'w+')
@@ -32,4 +32,4 @@ posts_json_file = open(POSTS_JSON_FILE_PATH, 'w+')
 posts_json_file.write(json.dumps(json_output))
 posts_json_file.close()
 
-print '\n\nJSON output generated at \'./content/posts.json\'.\n'
+print '\nJSON output generated at \'./content/posts.json\'.\n'
