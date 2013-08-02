@@ -28,7 +28,7 @@ function LandingCtrl($scope, $routeParams) {
   $scope.prev_page = $scope.current_page - 1 > 0 ? $scope.current_page - 1 : undefined;
   $scope.next_page = ($scope.current_page * CONFIG.NUM_POSTS_PER_PAGE) < $scope.posts.length ? $scope.current_page + 1 : undefined;
   var starting_index = Math.max($scope.current_page - 1, 0) * CONFIG.NUM_POSTS_PER_PAGE;
-  $scope.page_posts = $scope.posts.slice(starting_index, starting_index + CONFIG.NUM_POSTS_PER_PAGE);
+  $scope.current_page_posts = $scope.posts.slice(starting_index, starting_index + CONFIG.NUM_POSTS_PER_PAGE);
   console.log(starting_index);
   $scope.orderProp = 'timestamp';
 }
