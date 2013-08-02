@@ -23,9 +23,9 @@
         </script>
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="js/vendor/angular.min.js"></script>
-        <script src="js/app.js"></script>
+        <script src="js/luna.js"></script>
     </head>
-    <body>
+    <body ng-controller="LunaBlogCtrl">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -103,12 +103,7 @@
 
             $(document).foundation();
             $(function() {
-                // var converter = new Showdown.converter();
-                // $.get('./CONTENT.md', function(data) {
-                //     console.log('loaded');
-                //     console.log(data);
-                //     $('.main-container').html(converter.makeHtml(data));
-                // })
+                
             });
         </script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
