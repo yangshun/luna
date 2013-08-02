@@ -14,7 +14,7 @@ function LandingCtrl($scope, $http) {
     $scope.posts = data;
   });
 
-  $scope.orderProp = 'age';
+  $scope.orderProp = 'timestamp';
 }
 
 function AllPostsCtrl($scope, $http) {
@@ -22,7 +22,7 @@ function AllPostsCtrl($scope, $http) {
     $scope.posts = data;
   });
 
-  $scope.orderProp = 'age';
+  $scope.orderProp = 'timestamp';
 }
 
 function SinglePostCtrl($scope, $routeParams, $http) {
