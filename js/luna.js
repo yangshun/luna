@@ -12,32 +12,48 @@ angular.module('luna', []).
 
 function LunaBlogCtrl($scope, $http) {
 
-  $http.get('content/posts.json').success(function(data) {
-    $scope.posts = data;
-    for (var i = 0; i < $scope.posts.length; i++) {
-      $scope.posts[i].content = converter.makeHtml($scope.posts[i].content);
-      var d = new Date($scope.posts[i].timestamp * 1000);
-      $scope.posts[i].date = d.toString();
+  $scope.fetchPosts = function(cb) {
+    if (!$scope.posts) {
+      $http.get('content/posts.json').success(function(data) {
+        $scope.posts = data;
+        for (var i = 0; i < $scope.posts.length; i++) {
+          $scope.posts[i].content = converter.makeHtml($scope.posts[i].content);
+          var d = new Date($scope.posts[i].timestamp * 1000);
+          $scope.posts[i].date = d.toString();
+        }
+        console.log('loading done');
+        applyCb(cb);
+      });
+    } else {
+      applyCb(cb);
     }
-    console.log('loading done');
-  });
+    function applyCb(cb) {
+      if (cb) { cb(); } else { return; }
+    }
+  };
 }
 
 function LandingCtrl($scope, $routeParams) {
   console.log('landing ctrl init');
-  if ($scope.posts) {
-    $scope.current_page = $routeParams.page ? parseInt($routeParams.page) : 1;
-    $scope.prev_page = $scope.current_page - 1 > 0 ? $scope.current_page - 1 : undefined;
-    $scope.next_page = ($scope.current_page * CONFIG.NUM_POSTS_PER_PAGE) < $scope.posts.length ? $scope.current_page + 1 : undefined;
-    var starting_index = Math.max($scope.current_page - 1, 0) * CONFIG.NUM_POSTS_PER_PAGE;
-    $scope.current_page_posts = $scope.posts.slice(starting_index, starting_index + CONFIG.NUM_POSTS_PER_PAGE);
-    $scope.orderProp = 'timestamp';
-    console.log('current page posts init');
+  $scope.$parent.fetchPosts(getPagePosts);
+  
+  function getPagePosts() {
+    if ($scope.posts) {
+      $scope.current_page = $routeParams.page ? parseInt($routeParams.page) : 1;
+      $scope.prev_page = $scope.current_page - 1 > 0 ? $scope.current_page - 1 : undefined;
+      $scope.next_page = ($scope.current_page * CONFIG.NUM_POSTS_PER_PAGE) < $scope.posts.length ? $scope.current_page + 1 : undefined;
+      var starting_index = Math.max($scope.current_page - 1, 0) * CONFIG.NUM_POSTS_PER_PAGE;
+      $scope.current_page_posts = $scope.posts.slice(starting_index, starting_index + CONFIG.NUM_POSTS_PER_PAGE);
+      $scope.orderProp = 'timestamp';
+      console.log('current page posts init');
+    }
   }
 }
 
 function AllPostsCtrl($scope) {
-  $scope.orderProp = 'timestamp';
+  $scope.$parent.fetchPosts(function() {
+    $scope.orderProp = 'timestamp';
+  });
 }
 
 function SinglePostCtrl($scope, $routeParams) {
@@ -45,7 +61,9 @@ function SinglePostCtrl($scope, $routeParams) {
   $scope.post_loaded = false;
   $scope.newer_post_id = undefined;
   $scope.older_post_id = undefined;
-  $scope.current_post = findPostFromPostId($routeParams.post_id);
+  $scope.$parent.fetchPosts(function() {
+    $scope.current_post = findPostFromPostId($routeParams.post_id);
+  });
 
   function findPostFromPostId(post_id) {
     for (var i = 0; i < $scope.$parent.posts.length; i++) {
