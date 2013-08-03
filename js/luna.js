@@ -19,18 +19,21 @@ function LunaBlogCtrl($scope, $http) {
       var d = new Date($scope.posts[i].timestamp * 1000);
       $scope.posts[i].date = d.toString();
     }
+    console.log('loading done');
   });
 }
 
 function LandingCtrl($scope, $routeParams) {
-
-  $scope.current_page = $routeParams.page ? parseInt($routeParams.page) : 1;
-  $scope.prev_page = $scope.current_page - 1 > 0 ? $scope.current_page - 1 : undefined;
-  $scope.next_page = ($scope.current_page * CONFIG.NUM_POSTS_PER_PAGE) < $scope.posts.length ? $scope.current_page + 1 : undefined;
-  var starting_index = Math.max($scope.current_page - 1, 0) * CONFIG.NUM_POSTS_PER_PAGE;
-  $scope.current_page_posts = $scope.posts.slice(starting_index, starting_index + CONFIG.NUM_POSTS_PER_PAGE);
-  console.log(starting_index);
-  $scope.orderProp = 'timestamp';
+  console.log('landing ctrl init');
+  if ($scope.posts) {
+    $scope.current_page = $routeParams.page ? parseInt($routeParams.page) : 1;
+    $scope.prev_page = $scope.current_page - 1 > 0 ? $scope.current_page - 1 : undefined;
+    $scope.next_page = ($scope.current_page * CONFIG.NUM_POSTS_PER_PAGE) < $scope.posts.length ? $scope.current_page + 1 : undefined;
+    var starting_index = Math.max($scope.current_page - 1, 0) * CONFIG.NUM_POSTS_PER_PAGE;
+    $scope.current_page_posts = $scope.posts.slice(starting_index, starting_index + CONFIG.NUM_POSTS_PER_PAGE);
+    $scope.orderProp = 'timestamp';
+    console.log('current page posts init');
+  }
 }
 
 function AllPostsCtrl($scope) {
