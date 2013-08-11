@@ -1,6 +1,13 @@
 .main-container { width: 960px; margin: 0 auto; padding: 20px; }
 @media all and (max-width: 767px) { .main-container { width: auto; margin: 0; } }
 body { font-family: 'Open Sans', sans-serif; }
+body.skip-animations * {
+  -webkit-transition:none!important;
+  -moz-transition:none!important;
+  -ms-transition:none!important;
+  -o-transition:none!important;
+  transition:none!important;
+}
 h1, h2, h3, h4, h5, h6 { font-family: 'Arvo', sans-serif; color: #666; }
 h1 { font-size: 48px; }
 h2 { margin-top: 36px; }

@@ -12,6 +12,7 @@ angular.module('luna', []).
 
 function LunaCtrl($scope, $http, $timeout) {
   console.log('luna ctrl init');
+  $scope.disable_animations = !CONFIG.ENABLE_ANIMATIONS;
   $scope.all_posts_loaded = false;
 
   $http.get('content/posts.json').success(function(data) {
