@@ -3,7 +3,7 @@ Luna
 
 Luna is a blogging engine that compiles your posts written in [**markdown**](http://daringfireball.net/projects/markdown/syntax) into a static HTML site. Luna is inspired by [**Jekyll**](http://jekyllrb.com/) and [**Empress**](https://github.com/hodgesmr/Empress). Luna is powered by a front-end MVC Javascript framework [**AngularJS**](http://angularjs.org/) and is styled by Zurb's [**Foundation 4**](http://foundation.zurb.com/), a mobile-friendly front-end framework.
 
-Using Luna is a three-step process: Write. Build. Deploy.
+Using Luna is a three-step process: Write. Build. Deploy. View the a sample of the blog here: [http://yangshun.github.io/luna/](http://yangshun.github.io/luna/).
 
 Writing
 --
