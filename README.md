@@ -3,10 +3,12 @@ Luna
 
 Luna is a blogging engine that compiles your posts written in [**markdown**](http://daringfireball.net/projects/markdown/syntax) into a static HTML site. Luna is inspired by [**Jekyll**](http://jekyllrb.com/) and [**Empress**](https://github.com/hodgesmr/Empress). Luna is powered by a front-end MVC Javascript framework [**AngularJS**](http://angularjs.org/) and is styled by Zurb's [**Foundation 4**](http://foundation.zurb.com/), a mobile-friendly front-end framework.
 
+Using Luna is a three-step process: Write. Build. Deploy.
+
 Writing
 --
 
-1. Writing blog posts are easy. Simple add markdown files to the `./posts` directory. Avoid file names containing `#` and special symbols. 
+1. Writing blog posts is easy. Simple add markdown files to the `./posts` directory. Avoid file names containing `#` and special symbols. 
 
 2. By convention, the Python build script extracts the first line of the markdown file as the title of the post. Please write your posts in this fashion:
 
