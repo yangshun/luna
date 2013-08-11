@@ -1,7 +1,7 @@
 Luna
 ====
 
-Luna is a blogging engine that compiles your posts written in [**markdown**](http://daringfireball.net/projects/markdown/syntax) into a static HTML site. Luna is inspired by [**Jekyll**](http://jekyllrb.com/) and [**Empress**](https://github.com/hodgesmr/Empress). Luna is powered by a front-end MVC Javascript framework [AngularJS](http://angularjs.org/) and is styled by Zurb's [Foundation 4](http://foundation.zurb.com/), a mobile-friendly front-end framework.
+Luna is a blogging engine that compiles your posts written in [**markdown**](http://daringfireball.net/projects/markdown/syntax) into a static HTML site. Luna is inspired by [**Jekyll**](http://jekyllrb.com/) and [**Empress**](https://github.com/hodgesmr/Empress). Luna is powered by a front-end MVC Javascript framework [**AngularJS**](http://angularjs.org/) and is styled by Zurb's [**Foundation 4**](http://foundation.zurb.com/), a mobile-friendly front-end framework.
 
 Writing
 --
@@ -30,7 +30,7 @@ Writing
 Configuration
 --
 
-A number of configuration options are available in `config.js`. They should be pretty self-explanatory. Have a look at it and change the values where appropriate. More configurations to be added in future releases.
+A number of configuration options are available in `./config.js`. They should be pretty self-explanatory. Have a look at it and change the values where appropriate. More configurations to be added in future releases.
 
 Authors
 -- 
@@ -39,7 +39,7 @@ Authors
 
 License
 --
-Copyright (c) Corspedia 2013. Licensed under the MIT license.
+Copyright (c) Luna 2013. Licensed under the MIT license.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
