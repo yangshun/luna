@@ -23,7 +23,7 @@ Writing
   
     This command will compile the markdown files in the `./posts` directory into a JSON file called `posts.json` in the `./content` directory.
 
-5. Open `index.html` in a webserver to view the blog.
+5. Open this directory in a webserver to view the blog.
 
 6. Write. Build. Deploy. Have fun!
 
