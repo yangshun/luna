@@ -30,7 +30,7 @@ Writing
 Configuration
 --
 
-A number of configuration options are available in `config.js`. They should be pretty self-explanatory. Have a look at it and change the values where appropriate. More configurations to be added in future releases.
+A number of configuration options are available in `./config.js`. They should be pretty self-explanatory. Have a look at it and change the values where appropriate. More configurations to be added in future releases.
 
 Authors
 -- 
