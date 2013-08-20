@@ -19,8 +19,7 @@ li { list-style-type: none; }
 .all-posts { height: 69px; }
 
 .all-posts-enter, 
-.all-posts-leave
-{ 
+.all-posts-leave { 
   -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
   -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
   -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
