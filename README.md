@@ -5,6 +5,14 @@ Luna is a blogging engine that compiles your posts written in [**markdown**](htt
 
 Using Luna is a three-step process: Write. Build. Deploy. View the a sample of the blog here: [http://yangshun.github.io/luna/](http://yangshun.github.io/luna/).
 
+**Note:** You will have to install the Python package `dicttoxml` in order to enable RSS for the blog. Simply install it by running:
+
+		pip install dicttoxml
+
+Or:
+
+		easy_install dicttoxml
+
 Writing
 --
 
@@ -21,7 +29,7 @@ Writing
 
 4. To compile the site for uploading, run:
     
-        $ python build.py
+        $ python3 build.py
   
     This command will compile the markdown files in the `./posts` directory into a JSON file called `posts.json` in the `./content` directory.
 
@@ -32,7 +40,7 @@ Writing
 Configuration
 --
 
-A number of configuration options are available in `./config.js`. They should be pretty self-explanatory. Have a look at it and change the values where appropriate. More configurations to be added in future releases.
+A number of configuration options are available in `./config.js` and `build.py`. They should be pretty self-explanatory. Have a look at it and change the values where appropriate. More configurations to be added in future releases.
 
 Authors
 -- 
