@@ -35,7 +35,7 @@ def generate_rss(rss_output):
 
 	rss_file = open(POSTS_RSS_FILE_PATH, 'w+')
 	rss = {'rss':{'channel': rss_output}}
-	xml = dicttoxml.dicttoxml(rss)
+	xml = dicttoxml.dicttoxml(rss, root=False)
 	dom = parseString(xml)
 	prettyxml = dom.toprettyxml()
 	print(prettyxml)
