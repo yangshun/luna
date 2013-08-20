@@ -1,6 +1,7 @@
 var CONFIG = {};
 
 CONFIG.BLOG_TITLE = 'Blog Title';
+CONFIG.NAV_TITLE = 'Nav Title';
 
 CONFIG.SHOW_SIDEBAR = true;
 CONFIG.NUM_POSTS_IN_SIDEBAR = 5;

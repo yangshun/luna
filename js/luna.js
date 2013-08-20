@@ -16,6 +16,7 @@ function LunaCtrl($scope, $http, $timeout) {
   $scope.all_posts_loaded = false;
   $scope.blog = { 
     title: CONFIG.BLOG_TITLE,
+    nav_title: CONFIG.NAV_TITLE,
     use_disqus: CONFIG.USE_DISQUS
   }
 
