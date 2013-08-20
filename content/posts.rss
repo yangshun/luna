@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-<root>
 	<rss type="dict">
 		<channel type="list">
 			<item type="dict">
@@ -74,4 +73,4 @@
 			</item>
 		</channel>
 	</rss>
-</root>
+
