@@ -6,5 +6,9 @@
     <a ng-show="newer_post_id" href="#/{{newer_post_id}}" style="float:left">Newer</a>
     <a ng-show="older_post_id" href="#/{{older_post_id}}" style="float:right">Older</a>
   </div>
+  <div class="large-12 columns" ng-show="blog.use_disqus">
+    <hr/>
+    <div id="disqus_thread"></div>
+  </div>
 </div>
 
