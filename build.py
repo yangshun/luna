@@ -41,6 +41,21 @@ def generate_rss(rss_output):
 	rss = { 'rss': {'channel': rss_output }}
 	xml = dicttoxml.dicttoxml(rss, root=False)
 	dom = parseString(xml)
+
+	channel = dom.childNodes[0].childNodes[0]
+
+	titleNode = dom.createElement("title")
+	titleNode.appendChild(dom.createTextNode(SITE_TITLE))
+
+	descriptionNode = dom.createElement("description")
+	descriptionNode.appendChild(dom.createTextNode(SITE_DESCRIPTION))
+
+	linkNode = dom.createElement("link")
+	linkNode.appendChild(dom.createTextNode(SITE_LINK))
+
+	channel.insertBefore(linkNode, channel.firstChild)
+	channel.insertBefore(descriptionNode, channel.firstChild)
+	channel.insertBefore(titleNode, channel.firstChild)
 	prettyxml = dom.toprettyxml()
 	print(prettyxml)
 	rss_file.write(prettyxml)
