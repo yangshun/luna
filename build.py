@@ -4,7 +4,11 @@ import dicttoxml
 import datetime
 from xml.dom.minidom import parseString
 
-SITE = "http://yangshun.github.io/luna/#/"
+SITE_LINK = "http://yangshun.github.io/luna/#/"
+
+# Not in use yet
+SITE_TITLE = 'Luna Blogging Engine'
+SITE_DESCRIPTION = 'This is a demonstration of Luna Blogging Engine'
 
 POSTS_DIR_PATH = "./posts/"
 POSTS_JSON_FILE_PATH = "./content/posts.json"
@@ -25,7 +29,7 @@ def generate_rss(rss_output):
 	for post in rss_output:
 		del post['filename']
 		post['guid'] = post['post_id']
-		post['link'] = SITE + post['guid']
+		post['link'] = SITE_LINK + post['guid']
 		del post['post_id']
 		post['description'] = post['content']
 		del post['content']
@@ -34,7 +38,7 @@ def generate_rss(rss_output):
 		del post['modified']
 
 	rss_file = open(POSTS_RSS_FILE_PATH, 'w+')
-	rss = {'rss':{'channel': rss_output}}
+	rss = { 'rss': {'channel': rss_output }}
 	xml = dicttoxml.dicttoxml(rss, root=False)
 	dom = parseString(xml)
 	prettyxml = dom.toprettyxml()
