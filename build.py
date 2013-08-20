@@ -5,8 +5,6 @@ import datetime
 from xml.dom.minidom import parseString
 
 SITE_LINK = "http://yangshun.github.io/luna/#/"
-
-# Not in use yet
 SITE_TITLE = 'Luna Blogging Engine'
 SITE_DESCRIPTION = 'This is a demonstration of Luna Blogging Engine'
 
